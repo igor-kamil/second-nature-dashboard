@@ -1,6 +1,8 @@
 {
   "name": "second-nature-dashboard",
   "version": "0.1.0",
+  "author": "Igor Rjabinin",
+  "description": "second nature dashboard",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
