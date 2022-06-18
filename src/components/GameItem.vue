@@ -1,5 +1,5 @@
 <template>
-  <div class="flex p-8">
+  <div class="flex p-8 transition-all bg-black">
     <div class="basis-2/4">
       <div class="aspect-square">
         <img

@@ -2,16 +2,18 @@
   <img alt="Vue logo" src="./assets/logo.svg" class="mx-auto" />
 
   <div class="grid grid-cols-2 gap-4 p-10">
-    <div v-for="game, index in games" :key="game.id">
+    <div v-for="game, index in games" :key="game.name">
+      <div class="bg-purple-800/75">
       <GameItem
         :name="game.name"
         :imageSrc="game.imageSrc"
         :authors="game.authors"
-        :class="{ 'bg-gray-800 shadow-purple-500 shadow': index === focused }"
+        :class="{ 'bg-gray-800 translate-x-2 translate-y-2': index === focused }"
         
       >
         {{ game.description }}
       </GameItem>
+      </div>
     </div>
   </div>
 </template>
