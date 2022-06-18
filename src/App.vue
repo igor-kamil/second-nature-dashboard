@@ -1,7 +1,7 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.svg" class="mx-auto" />
+  <img alt="Vue logo" src="./assets/logo.svg" class="mx-auto mt-4 2xl:mt-8 2xl:mb-2" />
 
-  <div class="grid grid-cols-2 gap-4 p-10">
+  <div class="grid grid-cols-2 gap-4 p-10 2xl:px-24 2xl:gap-8 mt-auto">
     <div v-for="(game, index) in games" :key="game.name">
       <div class="bg-purple-800/75">
         <GameItem

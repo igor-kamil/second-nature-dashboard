@@ -1,6 +1,6 @@
 <template>
   <div class="flex p-8 transition-all bg-black">
-    <div class="basis-2/4">
+    <div class="basis-2/4 2xl:basis-5/12 pr-4">
       <div class="aspect-square">
         <img
           :src="require(`@/assets/${props.imageSrc}`)"
@@ -9,7 +9,7 @@
         />
       </div>
     </div>
-    <div class="text-right basis-2/4 mt-auto text-lg">
+    <div class="basis-2/4 2xl:basis-7/12 text-right mt-auto text-lg">
       <h2 class="text-white uppercase text-4xl font-bold -ml-18 text-shadow">
         {{ props.name }}
       </h2>
