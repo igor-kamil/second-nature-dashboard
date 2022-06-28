@@ -55,6 +55,10 @@
       />
     </svg>
   </div>
+
+  <audio ref="audio" preload autoplay loop>
+    <source src="./assets/sound.wav" />
+  </audio>
 </template>
 
 <script setup>
@@ -104,6 +108,7 @@ const games = [
 ];
 const focused = ref(0);
 const loading = ref(false);
+const audio = ref(null);
 let gamepadIndex = ref(null);
 
 onMounted(() => {
@@ -117,6 +122,9 @@ onMounted(() => {
   window.addEventListener("keypress", (e) => {
     // console.log(e.keyCode);
     switch (e.keyCode) {
+      case 109: // left
+        toggleSound();
+        break;
       case 97: // left
         left();
         break;
@@ -203,6 +211,14 @@ onMounted(() => {
   const right = () => {
     focused.value = focused.value + 1;
     focused.value = mod(focused.value, 4);
+  };
+
+  const toggleSound = () => {
+    if (audio.value.paused) {
+      return audio.value.play();
+    } else {
+      return audio.value.pause();
+    }
   };
 });
 </script>
