@@ -187,9 +187,11 @@ onMounted(() => {
   const launchGame = (index) => {
     // console.log(`spusti: ${games[index].gamePath}`);
     loading.value = true;
+    toggleSound();
     let child = exec(games[index].gamePath);
     child.on("close", function () {
       loading.value = false;
+      toggleSound();
     });
   };
 
