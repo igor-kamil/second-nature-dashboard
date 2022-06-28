@@ -11,7 +11,9 @@
         <GameItem
           :name="game.name"
           :imageSrc="game.imageSrc"
+          :videoSrc="game.videoSrc"
           :authors="game.authors"
+          :isFocused="index === focused"
           :class="{
             'bg-gray-800 translate-x-2 translate-y-2': index === focused,
           }"
@@ -35,10 +37,20 @@ import { exec } from "child_process";
 const games = [
   {
     name: "Budova(nie) Entity",
-    imageSrc: "budovanie.png",
+    imageSrc: "budovanie_entity/preview.png",
+    videoSrc: "budovanie_entity/preview.mp4",
     description:
       "Budova(nie) entity je hra, v ktorej sa dozvedáš o spomienkach a histórii budovy, ktorá to v minulosti nemala ľahké. Vytvor si vlastný názor a porozmýšľaj o jej osude.",
     authors: "Petra Kořenková, Kristian Shofranko, Dominik Devečka",
+    gamePath: "open /Applications/LittleMousesEncyclopedia.app",
+  },
+  {
+    name: "440",
+    imageSrc: "404/preview.jpeg",
+    videoSrc: "404/preview.mp4",
+    description:
+      "V 3D interaktívnej hre sa môžeme prechádzať prostredím skládky chemického odpadu z bývalých Chemických závodov Juraja Dimitrova v bratislavskej mestskej časti Vrakuňa v období neskoršieho antropocénu, v ktorom už georeliéf nie je tvorený len prírodnými horninami, ale obsahuje stopy a produkty ľudských činností.",
+    authors: "Adela Lujza Lučeničová, Natália Zajáčiková, Emma Zahradníková",
     gamePath: "open /Applications/LittleMousesEncyclopedia.app",
   },
   {
@@ -55,14 +67,6 @@ const games = [
     description:
       "Simulátor chodenia v prostredí Trenčianskych Luhov. V prostredí je možné prežiť problematiku približovania sa k chráneným živočíchom, premenu vzácnych biotopov na sklad odpadu.",
     authors: "Victoria Ann Bračoková, Ján Konečný, Miroslav Čuridlo",
-    gamePath: "open /Applications/LittleMousesEncyclopedia.app",
-  },
-  {
-    name: "440",
-    imageSrc: "404.png",
-    description:
-      "V 3D interaktívnej hre sa môžeme prechádzať prostredím skládky chemického odpadu z bývalých Chemických závodov Juraja Dimitrova v bratislavskej mestskej časti Vrakuňa v období neskoršieho antropocénu, v ktorom už georeliéf nie je tvorený len prírodnými horninami, ale obsahuje stopy a produkty ľudských činností.",
-    authors: "Adela Lujza Lučeničová, Natália Zajáčiková, Emma Zahradníková",
     gamePath: "open /Applications/LittleMousesEncyclopedia.app",
   },
 ];

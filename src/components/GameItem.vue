@@ -6,7 +6,11 @@
           :src="require(`@/assets/${props.imageSrc}`)"
           alt=""
           class="w-full h-full"
+          v-if="!props.isFocused || !props.videoSrc"
         />
+        <video class="w-full h-full" autoplay loop v-if="props.videoSrc && props.isFocused">
+          <source :src="require(`@/assets/${props.videoSrc}`)" type="video/mp4">
+        </video>
       </div>
     </div>
     <div class="basis-2/4 2xl:basis-7/12 text-right mt-auto text-lg">
@@ -29,6 +33,8 @@ import { defineProps } from "vue"
 const props = defineProps({
     'name': String,
     'imageSrc': String,
+    'videoSrc': String,
     'authors': String,
+    'isFocused': Boolean,
 })
 </script>
