@@ -16,7 +16,7 @@
       <p class="text-white py-5 pl-1">
         <slot></slot>
       </p>
-      <div class="text-purple-500 pl-1 uppercase">
+      <div class="text-green-600 pl-1 uppercase">
         {{ props.authors }}
       </div>
     </div>
