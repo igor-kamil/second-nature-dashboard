@@ -1,5 +1,9 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.svg" class="mx-auto mt-4 2xl:mt-8 2xl:mb-2" />
+  <img
+    alt="Vue logo"
+    src="./assets/logo.svg"
+    class="mx-auto mt-4 2xl:mt-8 2xl:mb-2"
+  />
 
   <div class="grid grid-cols-2 gap-4 p-10 2xl:px-24 2xl:gap-8 mt-auto">
     <div v-for="(game, index) in games" :key="game.name">
@@ -54,7 +58,7 @@ const games = [
     imageSrc: "404.png",
     description:
       "V 3D interaktívnej hre sa môžeme prechádzať prostredím skládky chemického odpadu z bývalých Chemických závodov Juraja Dimitrova v bratislavskej mestskej časti Vrakuňa v období neskoršieho antropocénu, v ktorom už georeliéf nie je tvorený len prírodnými horninami, ale obsahuje stopy a produkty ľudských činností.",
-    authors: "Adela Lujza Lučeničová, Natália Zajáčiková, Emma Záhradníková",
+    authors: "Adela Lujza Lučeničová, Natália Zajáčiková, Emma Zahradníková",
     gamePath: "open /Applications/LittleMousesEncyclopedia.app",
   },
 ];
@@ -115,15 +119,19 @@ onMounted(() => {
               case 13: // down
                 down();
                 break;
-              case 8: // select
-                launchGame(focused.value);
-                break;
-              case 9: // start
+              case 8: // start
+              case 9:
+              case 0:
                 launchGame(focused.value);
                 break;
             }
           }
         });
+
+      if (myGamepad.axes[0] < -0.5) left();
+      if (myGamepad.axes[0] > 0.5) right();
+      if (myGamepad.axes[1] < -0.5) up();
+      if (myGamepad.axes[1] > 0.5) down();
     }
   }, 200); // 5 times per second
 
