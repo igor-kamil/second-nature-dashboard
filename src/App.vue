@@ -73,8 +73,18 @@ const games = [
     imageSrc: "404/preview.jpeg",
     videoSrc: "404/preview.mp4",
     description:
-      "V 3D interaktívnej hre sa môžeme prechádzať prostredím skládky chemického odpadu z bývalých Chemických závodov Juraja Dimitrova v bratislavskej mestskej časti Vrakuňa v období neskoršieho antropocénu, v ktorom už georeliéf nie je tvorený len prírodnými horninami, ale obsahuje stopy a produkty ľudských činností.",
-    authors: "Adela Lujza Lučeničová, Natália Zajáčiková, Emma Zahradníková",
+      "Téma neschopnosť čeliť následkom svojho konania a neustále odkladanie príčin problémov, ktoré budú mať fatálne následky pre ďalšie generácie ľudstva. Dielo sa dotýka tém znečistenia a devastácie životného prostredia a arogancie systému založeného na princípe nekonečného rastu v prostredí obmedzených zdrojov.",
+    authors: "Adela Lujza Lučeničová, Natália Zajačiková, Emma Zahradníková",
+    gamePath:
+      "/Applications/LittleMousesEncyclopedia.app/Contents/MacOS/LittleMousesEncyclopedia",
+  },
+  {
+    name: "Luhy",
+    imageSrc: "luhy/preview.png",
+    videoSrc: "luhy/preview.mp4",
+    description:
+      "Simulátor chodenia v prostredí Trenčianskych Luhov. V prostredí je možné prežiť problematiku približovania sa k chráneným živočíchom, premenu vzácnych biotopov na sklad odpadu.",
+    authors: "Victoria Ann Bračoková, Ján Konečný, Miroslav Čuridlo",
     gamePath:
       "/Applications/LittleMousesEncyclopedia.app/Contents/MacOS/LittleMousesEncyclopedia",
   },
@@ -84,15 +94,6 @@ const games = [
     description:
       "Izometrický environment je simuláciou balansu medzi industriálnou výrobou a pôvodnou prírodou. Abstrahovanie rastu a nepomeru do vizuálnej čistej hry. Industrializácia miest ponúka rozvoj, pre pochopenie exponencionálneho rastu je možné simulovať rôzne scenáre aktivity.",
     authors: "Leonard Lofaj, Prokop Findeis",
-    gamePath:
-      "/Applications/LittleMousesEncyclopedia.app/Contents/MacOS/LittleMousesEncyclopedia",
-  },
-  {
-    name: "Luhy",
-    imageSrc: "luhy.png",
-    description:
-      "Simulátor chodenia v prostredí Trenčianskych Luhov. V prostredí je možné prežiť problematiku približovania sa k chráneným živočíchom, premenu vzácnych biotopov na sklad odpadu.",
-    authors: "Victoria Ann Bračoková, Ján Konečný, Miroslav Čuridlo",
     gamePath:
       "/Applications/LittleMousesEncyclopedia.app/Contents/MacOS/LittleMousesEncyclopedia",
   },
