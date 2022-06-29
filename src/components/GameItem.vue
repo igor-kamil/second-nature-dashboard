@@ -1,6 +1,6 @@
 <template>
-  <div class="flex p-8 transition-all bg-black">
-    <div class="basis-2/4 2xl:basis-5/12 pr-4">
+  <div class="flex p-8 pb-6 transition-all bg-black">
+    <div class="basis-2/4 2xl:basis-5/12 pr-6">
       <div class="aspect-square">
         <img
           :src="require(`@/assets/${props.imageSrc}`)"
@@ -8,9 +8,25 @@
           class="w-full h-full"
           v-if="!props.isFocused || !props.videoSrc"
         />
-        <video class="w-full h-full" autoplay loop v-if="props.videoSrc && props.isFocused">
-          <source :src="require(`@/assets/${props.videoSrc}`)" type="video/mp4">
+        <video
+          class="w-full h-full"
+          autoplay
+          loop
+          v-if="props.videoSrc && props.isFocused"
+        >
+          <source
+            :src="require(`@/assets/${props.videoSrc}`)"
+            type="video/mp4"
+          />
         </video>
+      </div>
+      <div class="mx-auto text-center text-gray-400 pt-5 text-sm transition-opacity" :class="[props.isFocused ? 'opacity-100' : 'opacity-0']">
+        Stlač
+        <span
+          class="bg-black rounded-xl text-blue-400 px-2 py-1 text-xs font-bold"
+          >A</span
+        >
+        pre štart
       </div>
     </div>
     <div class="basis-2/4 2xl:basis-7/12 text-right mt-auto text-lg">
@@ -28,13 +44,13 @@
 </template>
 
 <script setup>
-import { defineProps } from "vue"
+import { defineProps } from "vue";
 
 const props = defineProps({
-    'name': String,
-    'imageSrc': String,
-    'videoSrc': String,
-    'authors': String,
-    'isFocused': Boolean,
-})
+  name: String,
+  imageSrc: String,
+  videoSrc: String,
+  authors: String,
+  isFocused: Boolean,
+});
 </script>

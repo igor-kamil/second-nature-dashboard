@@ -2,10 +2,10 @@
   <img
     alt="Second Nature"
     src="./assets/logo.svg"
-    class="mx-auto mt-4 2xl:mt-8 2xl:mb-2 w-[36rem]"
+    class="mx-auto mt-4 2xl:mt-5 2xl:mb-1 w-[34rem]"
   />
 
-  <div class="grid grid-cols-2 gap-4 p-10 2xl:px-24 2xl:gap-10 mt-auto">
+  <div class="grid grid-cols-2 gap-4 p-10 2xl:px-24 2xl:gap-12 mt-auto">
     <div v-for="(game, index) in games" :key="game.name">
       <div class="bg-green-800/75">
         <GameItem
@@ -22,15 +22,6 @@
         </GameItem>
       </div>
     </div>
-  </div>
-
-  <div class="mx-auto text-center text-gray-400 pb-2 text-sm">
-    Stlač
-    <span
-      class="bg-gray-700 rounded-xl text-blue-400 px-2 py-1 text-xs font-bold"
-      >A</span
-    >
-    pre štart
   </div>
 
   <div
