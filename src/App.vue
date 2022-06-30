@@ -2,10 +2,10 @@
   <img
     alt="Second Nature"
     src="./assets/logo.svg"
-    class="mx-auto mt-4 2xl:mt-5 2xl:mb-1 w-[34rem]"
+    class="mx-auto mt-4 2xl:mt-10 2xl:mb-8 w-[34rem] 2xl:w-[82rem]"
   />
 
-  <div class="grid grid-cols-2 gap-4 p-10 2xl:px-24 2xl:gap-12 mt-auto">
+  <div class="grid grid-cols-2 gap-4 p-10 2xl:px-24 2xl:gap-y-8 2xl:gap-x-16 mt-auto">
     <div v-for="(game, index) in games" :key="game.name">
       <div class="bg-green-800/75">
         <GameItem
@@ -15,7 +15,7 @@
           :authors="game.authors"
           :isFocused="index === focused"
           :class="{
-            'bg-gray-800 translate-x-2 translate-y-2': index === focused,
+            'bg-gray-800 translate-x-2 translate-y-2 2xl:translate-x-4 2xl:translate-y-4': index === focused,
           }"
         >
           {{ game.description }}
@@ -48,7 +48,7 @@
   </div>
 
   <audio ref="audio" preload autoplay loop>
-    <source src="./assets/sound.wav" />
+    <source :src="soundfile" />
   </audio>
 </template>
 
@@ -56,6 +56,7 @@
 import { ref, onMounted } from "vue";
 import GameItem from "./components/GameItem.vue";
 import { exec } from "child_process";
+import soundfile from './assets/sound.wav'; 
 
 const games = [
   {
@@ -64,7 +65,7 @@ const games = [
     videoSrc: "budovanie_entity/preview.mp4",
     description:
       "Na každú budovu je nazerané inak. Niektoré zostanú nepovšimnuté celú svoju existenciu a iné rozvíria debaty na niekoľko desaťročí. Príď sa poprechádzať medzi spomienkami na takú, ktorá to počas svojho života nemala ľahké. Konfrontuj sa rôznymi názormi na ňu a zaži cestu budovania entity.",
-    authors: "Petra Kořenková, Kristian Shofranko, Dominik Devečka",
+    authors: "Petra Kořenková, Kristian Shofranko, Dominik Devečka",
     gamePath:
       "/Applications/LittleMousesEncyclopedia.app/Contents/MacOS/LittleMousesEncyclopedia",
   },
@@ -73,7 +74,7 @@ const games = [
     imageSrc: "404/preview.jpeg",
     videoSrc: "404/preview.mp4",
     description:
-      "Téma neschopnosť čeliť následkom svojho konania a neustále odkladanie príčin problémov, ktoré budú mať fatálne následky pre ďalšie generácie ľudstva. Dielo sa dotýka tém znečistenia a devastácie životného prostredia a arogancie systému založeného na princípe nekonečného rastu v prostredí obmedzených zdrojov.",
+      "Prejdi sa prostredím skládky chemického odpadu CHZJD vo Vrakuni v období neskoršieho antropocénu! Vidíš tu zvláštnu hmlu? Niečo sa s tebou pokúša rozprávať. Nájdi špeciálne zariadenie na pochopenie takejto formy komunikácie. Stačí sledovať cestu isopoda. Hľadaj interaktívne objekty a zbieraj špeciálne kódy na odomknutie predmetu na druhej strane mapy.",
     authors: "Adela Lujza Lučeničová, Natália Zajačiková, Emma Zahradníková",
     gamePath:
       "/Applications/LittleMousesEncyclopedia.app/Contents/MacOS/LittleMousesEncyclopedia",
@@ -83,14 +84,15 @@ const games = [
     imageSrc: "luhy/preview.png",
     videoSrc: "luhy/preview.mp4",
     description:
-      "Simulátor chodenia v prostredí Trenčianskych Luhov. V prostredí je možné prežiť problematiku približovania sa k chráneným živočíchom, premenu vzácnych biotopov na sklad odpadu.",
+      "Projekt \"LUHY\" sa zaoberá problematikov chránených oblastí a pohybom v nich. V prostredí inšpirovanom Trenčínom, kde sa aj lužný les nachádza, sa dá pohybovať po ceste ktorá diváka oboznámi, čo sa v luhoch vyskytuje, aké problémy môžeme vidieť s luhmi a ich najčastejších zvieracích obyvateľov.",
     authors: "Victoria Ann Bračoková, Ján Konečný, Miroslav Čuridlo",
     gamePath:
       "/Applications/LittleMousesEncyclopedia.app/Contents/MacOS/LittleMousesEncyclopedia",
   },
   {
     name: "Paper factory",
-    imageSrc: "budovanie.png",
+    imageSrc: "paper_factory/preview.png",
+    videoSrc: "paper_factory/preview.mp4",
     description:
       "Izometrický environment je simuláciou balansu medzi industriálnou výrobou a pôvodnou prírodou. Abstrahovanie rastu a nepomeru do vizuálnej čistej hry. Industrializácia miest ponúka rozvoj, pre pochopenie exponencionálneho rastu je možné simulovať rôzne scenáre aktivity.",
     authors: "Leonard Lofaj, Prokop Findeis",
