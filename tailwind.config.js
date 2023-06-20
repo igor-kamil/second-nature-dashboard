@@ -4,6 +4,7 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: ["Youth", "sans"],
+      serif: ['Hofmann', 'sans-serif'],
     },
     screens: {
       sm: "640px",

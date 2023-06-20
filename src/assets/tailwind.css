@@ -8,9 +8,9 @@
 
 @layer utilities {
     .text-shadow {
-        text-shadow: -4px -4px 0px rgb(255 135 0 / 60%);
+        text-shadow: -3px -3px 3px rgb(255 135 0 / 60%);
     }
     .box-shadow {
-        box-shadow: -4px -4px 0px rgb(255 135 0 / 60%);
+        box-shadow: -3px -3px 0px rgb(255 135 0 / 60%);
     }
 }

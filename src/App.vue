@@ -2,7 +2,8 @@
   <div class="h-full flex justify-center items-center">
     <div class="grid grid-cols-3 gap-4 p-12 3xl:px-24 3xl:gap-y-8 3xl:gap-x-16 mt-auto h-auto my-auto">
       <div v-for="(game, index) in games" :key="game.name">
-        <div class="bg-orange/75">
+        <div class="relative">
+          <div class="absolute w-full h-full bg-orange/75 z-0 blur-md" v-if="index === focused"></div>
           <GameItem
             :name="game.name"
             :imageSrc="game.imageSrc"
@@ -10,7 +11,7 @@
             :authors="game.authors"
             :isFocused="index === focused"
             :class="{
-              'bg-gray-800 translate-x-2 translate-y-2 3xl:translate-x-4 3xl:translate-y-4': index === focused,
+              'translate-x-2 translate-y-2 3xl:translate-x-4 3xl:translate-y-4': index === focused,
             }"
           >
             {{ game.description }}
@@ -66,7 +67,7 @@ const games = [
     videoSrc: "404/preview.mp4",
     description:
       "Prejdi sa prostredím skládky chemického odpadu CHZJD vo Vrakuni v období neskoršieho antropocénu! Vidíš tu zvláštnu hmlu? Niečo sa s tebou pokúša rozprávať. Nájdi špeciálne zariadenie na pochopenie takejto formy komunikácie. Stačí sledovať cestu isopoda. Hľadaj interaktívne objekty a zbieraj špeciálne kódy na odomknutie predmetu na druhej strane mapy.",
-    authors: "Adela Lujza Lučeničová, Natália Zajačiková, Emma Zahradníková",
+    authors: "Adela Lujza Lučeničová, Natália Zajačiková, Emma Zahradníková",
     gamePath: "games\\440\\Game.exe",
   },
   {

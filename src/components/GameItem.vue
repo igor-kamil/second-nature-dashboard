@@ -1,15 +1,15 @@
 <template>
-  <div class="flex-col p-8 3xl:p-14 pb-6 transition-all bg-black">
+  <div class="flex-col p-8 3xl:p-14 pb-6 transition-all bg-black rounded-3xl">
     <div class="basis-2/5 3xl:basis-5/12 pr-6 3xl:pr-16">
       <div class="aspect-square">
         <img
           :src="require(`@/assets/${props.imageSrc}`)"
           alt=""
-          class="w-full h-full"
+          class="w-full h-full rounded-2xl"
           v-if="!props.isFocused || !props.videoSrc"
         />
         <video
-          class="w-full h-full"
+          class="w-full h-full rounded-2xl"
           autoplay
           loop
           v-if="props.videoSrc && props.isFocused"
@@ -29,8 +29,8 @@
         pre štart
       </div>
     </div>
-    <div class="basis-3/5 3xl:basis-7/12 text-right mt-auto text-lg 3xl:text-5xl mt-3">
-      <h2 class="text-white uppercase text-4xl 3xl:text-8xl font-bold -ml-18 text-shadow">
+    <div class="basis-3/5 3xl:basis-7/12 text-right mt-auto text-lg mt-3">
+      <h2 class="text-white uppercase text-4xl 3xl:text-8xl font-bold -ml-18">
         {{ props.name }}
       </h2>
       <p class="text-white py-5 3xl:py-14 pl-1">
