@@ -1,0 +1,34 @@
+@font-face {
+    font-family: 'Youth';
+    src: url('./fonts/Youth/allcaps_-_youth_bold-webfont.woff2') format('woff2'),
+         url('./fonts/Youth/allcaps_-_youth_bold-webfont.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Youth';
+    src: url('./fonts/Youth/allcaps_-_youth_regular-webfont.woff2') format('woff2'),
+         url('./fonts/Youth/allcaps_-_youth_regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Youth';
+    src: url('./fonts/Youth/allcaps_-_youth_medium-webfont.woff2') format('woff2'),
+         url('./fonts/Youth/allcaps_-_youth_medium-webfont.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Hofmann';
+    src: url('./fonts/Hofmann/hofmann-webfont.woff2') format('woff2'),
+         url('./fonts/Hofmann/hofmann-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}

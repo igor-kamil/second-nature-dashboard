@@ -1,5 +1,5 @@
 <template>
-  <div class="flex p-8 3xl:p-14 pb-6 transition-all bg-black">
+  <div class="flex-col p-8 3xl:p-14 pb-6 transition-all bg-black">
     <div class="basis-2/5 3xl:basis-5/12 pr-6 3xl:pr-16">
       <div class="aspect-square">
         <img
@@ -29,14 +29,14 @@
         pre štart
       </div>
     </div>
-    <div class="basis-3/5 3xl:basis-7/12 text-right mt-auto text-lg 3xl:text-5xl">
+    <div class="basis-3/5 3xl:basis-7/12 text-right mt-auto text-lg 3xl:text-5xl mt-3">
       <h2 class="text-white uppercase text-4xl 3xl:text-8xl font-bold -ml-18 text-shadow">
         {{ props.name }}
       </h2>
       <p class="text-white py-5 3xl:py-14 pl-1">
         <slot></slot>
       </p>
-      <div class="text-green-600 pl-1 uppercase">
+      <div class="text-orange pl-1 uppercase">
         {{ props.authors }}
       </div>
     </div>

@@ -1,37 +1,30 @@
 <template>
-  <img
-    alt="Second Nature"
-    src="./assets/logo.svg"
-    class="mx-auto mt-4 3xl:mt-10 3xl:mb-8 w-[34rem] 3xl:w-[82rem]"
-  />
-
-  <div class="grid grid-cols-2 gap-4 p-12 3xl:px-24 3xl:gap-y-8 3xl:gap-x-16 mt-auto">
-    <div v-for="(game, index) in games" :key="game.name">
-      <div class="bg-green-800/75">
-        <GameItem
-          :name="game.name"
-          :imageSrc="game.imageSrc"
-          :videoSrc="game.videoSrc"
-          :authors="game.authors"
-          :isFocused="index === focused"
-          :class="{
-            'bg-gray-800 translate-x-2 translate-y-2 3xl:translate-x-4 3xl:translate-y-4': index === focused,
-          }"
-        >
-          {{ game.description }}
-        </GameItem>
+  <div class="h-full flex justify-center items-center">
+    <div class="grid grid-cols-3 gap-4 p-12 3xl:px-24 3xl:gap-y-8 3xl:gap-x-16 mt-auto h-auto my-auto">
+      <div v-for="(game, index) in games" :key="game.name">
+        <div class="bg-orange/75">
+          <GameItem
+            :name="game.name"
+            :imageSrc="game.imageSrc"
+            :videoSrc="game.videoSrc"
+            :authors="game.authors"
+            :isFocused="index === focused"
+            :class="{
+              'bg-gray-800 translate-x-2 translate-y-2 3xl:translate-x-4 3xl:translate-y-4': index === focused,
+            }"
+          >
+            {{ game.description }}
+          </GameItem>
+        </div>
       </div>
     </div>
   </div>
 
-  <div
-    class="fixed inset-0 z-50 flex justify-center items-center"
-    v-if="loading"
-  >
+  <div class="fixed inset-0 z-50 flex justify-center items-center" v-if="loading">
     <div class="bg-black opacity-70 absolute inset-0" />
     <svg
       role="status"
-      class="w-8 h-8 3xl:w-16 3xl:h-16 mr-2 text-gray-200 animate-spin dark:text-gray-600 fill-green-600"
+      class="w-8 h-8 3xl:w-16 3xl:h-16 mr-2 text-gray-200 animate-spin dark:text-gray-600 fill-orage"
       viewBox="0 0 100 101"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -47,9 +40,9 @@
     </svg>
   </div>
 
-  <audio ref="audio" preload autoplay loop>
+  <!-- <audio ref="audio" preload autoplay loop>
     <source :src="require(`@/assets/BaseMusic.mp3`)" />
-  </audio>
+  </audio> -->
 </template>
 
 <script setup>
@@ -65,8 +58,7 @@ const games = [
     description:
       "Na každú budovu je nazerané inak. Niektoré zostanú nepovšimnuté celú svoju existenciu a iné rozvíria debaty na niekoľko desaťročí. Príď sa poprechádzať medzi spomienkami na takú, ktorá to počas svojho života nemala ľahké. Konfrontuj sa rôznymi názormi na ňu a zaži cestu budovania entity.",
     authors: "Petra Kořenková, Kristian Shofranko, Dominik Devečka",
-    gamePath:
-      "games\\Entity\\Entity.exe",
+    gamePath: "games\\Entity\\Entity.exe",
   },
   {
     name: "440",
@@ -75,33 +67,21 @@ const games = [
     description:
       "Prejdi sa prostredím skládky chemického odpadu CHZJD vo Vrakuni v období neskoršieho antropocénu! Vidíš tu zvláštnu hmlu? Niečo sa s tebou pokúša rozprávať. Nájdi špeciálne zariadenie na pochopenie takejto formy komunikácie. Stačí sledovať cestu isopoda. Hľadaj interaktívne objekty a zbieraj špeciálne kódy na odomknutie predmetu na druhej strane mapy.",
     authors: "Adela Lujza Lučeničová, Natália Zajačiková, Emma Zahradníková",
-    gamePath:
-      "games\\440\\Game.exe",
+    gamePath: "games\\440\\Game.exe",
   },
   {
     name: "Luhy",
     imageSrc: "luhy/preview.png",
     videoSrc: "luhy/preview.mp4",
     description:
-      "Projekt \"LUHY\" sa zaoberá problematikou chránených oblastí a pohybom v nich. V prostredí inšpirovanom Trenčínom, kde sa aj lužný les nachádza, sa dá pohybovať po ceste ktorá diváka oboznámi, čo sa v luhoch vyskytuje, aké problémy môžeme vidieť s luhmi a ich najčastejších zvieracích obyvateľov.",
+      'Projekt "LUHY" sa zaoberá problematikou chránených oblastí a pohybom v nich. V prostredí inšpirovanom Trenčínom, kde sa aj lužný les nachádza, sa dá pohybovať po ceste ktorá diváka oboznámi, čo sa v luhoch vyskytuje, aké problémy môžeme vidieť s luhmi a ich najčastejších zvieracích obyvateľov.',
     authors: "Victoria Ann Bračoková, Ján Konečný, Miroslav Čuridlo",
-    gamePath:
-      "games\\Luhy\\Luhy.exe",
-  },
-  {
-    name: "Paper factory",
-    imageSrc: "paper_factory/preview.png",
-    videoSrc: "paper_factory/preview.mp4",
-    description:
-      "Izometrický environment je simuláciou balansu medzi industriálnou výrobou a pôvodnou prírodou. Abstrahovanie rastu a nepomeru do vizuálnej čistej hry. Industrializácia miest ponúka rozvoj, pre pochopenie exponencionálneho rastu je možné simulovať rôzne scenáre aktivity.",
-    authors: "Leonard Lofaj, Prokop Findeis",
-    gamePath:
-      "games\\PaperFactory\\2DLEPORAonkropd.exe",
+    gamePath: "games\\Luhy\\Luhy.exe",
   },
 ];
 const focused = ref(0);
 const loading = ref(false);
-const audio = ref(null);
+// const audio = ref(null);
 let gamepadIndex = ref(null);
 
 onMounted(() => {
@@ -209,11 +189,11 @@ onMounted(() => {
   };
 
   const toggleSound = () => {
-    if (audio.value.paused) {
-      return audio.value.play();
-    } else {
-      return audio.value.pause();
-    }
+    // if (audio.value.paused) {
+    //   return audio.value.play();
+    // } else {
+    //   return audio.value.pause();
+    // }
   };
 });
 </script>
